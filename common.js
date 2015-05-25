@@ -20,7 +20,7 @@ var navigation = function () {
 var layout = function(navigation, content) {
     return  [
         m("header", navigation),
-        m("section", content)
+        m("article#content", content)
     ];
 };
 

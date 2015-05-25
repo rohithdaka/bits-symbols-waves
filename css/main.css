@@ -1,11 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
 header {
-    position:fixed;
     width:100%;
+    height: 150px;
     min-width: 900px;
-    top:0;
-    left:0;
     background-color: #222;
-    z-index:10;
+    position: absolute;
 }
 
 header h1 {
@@ -26,80 +29,38 @@ header h3 {
     margin-left:10px;
     padding-left:10px;
     color:beige;
-    clear:both;
 }
 
-header aside { 
-    font-family: serif;
-    color:floralwhite;
-    float:right;
-    margin:10px;
+header table {
+    font-family: Calibri;
+    font-size: 20;
+    padding: 5px;
+    margin: 0;
+    margin-left:10px;
+}
+
+td {
+    margin: 0;
+    padding: 10px;
+}
+
+
+
+#content{
+    top:150px;
     padding:10px;
-    
-}
-
-header:before,
-header:after { 
-    content:"";
-    display:table;
-}
-
-header:after{
-    clear:both;
-}
-
-article.content:before,
-article.content:after { 
-    content:"";
-    display:table;
-}
-
-article.content:after{
-    clear:both;
-}
-
-article.content {
-    clear:both;
-    *zoom:1;
-}
-
-.content{
-    top:50px;
-    padding:10px;
-    padding-bottom:100px;
     position: relative;
-    width:100%;
+    width:50%;
     min-height:100%;
-    min-width: 900px;
+    min-width: 400px;
+    font-family: sans-serif;
 }
 
-.info {
-    width: 50%;
-    min-width: 450px;
-    margin:5px;
-    padding:5px;
-    float:left;
-}
-
-.notes{
-    width:30%;
-    min-width: 300px;
-    float:left;
-    margin:5px;
-    padding:5px;
-    font-size:0.7em;
-}
-
-ul {
-    padding: 5px 0px 0px 10px;
-    margin:0;
-    border:0;
-    list-style: none;
-}
 
 p {
     display: block;
-    text-indent: 1em;
+    text-indent: 2em;
+    position: relative;
 }
 
 li {
@@ -113,15 +74,6 @@ footer {
     min-width: 900px;
     background-color: #222;
 	height:200px;
-}
-
-section.navmenu {
-    float:left;
-    position:relative;
-    width: 17%;
-    min-width: 180px;
-    padding:5px;
-    margin: 5px;
 }
 
 
