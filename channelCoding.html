@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Wireless Communications Primer</title>
+        <meta name="description" content="An interactive primer to understand the building blocks of wireless communications: Antennas, RF Front End, Digital Modulation and Channel Coding">
+        <meta name="keywords" content="Antennas, RF, Digital Modulation, Channel Coding">
+        <meta name="author" content="Rohith Daka">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="http://cdn.jsdelivr.net/mithril/0.2.0/mithril.min.js"></script>
+        <script src = "common.js"></script>
+    </head>
+    <body></body>
+    <script>
+        var channelCoding = {};
+        var blockCode = {};
+        var convolutionCode = {};
+        
+
+        var introContent = function(){
+            return m("p","Intro text goes here");
+        };
+        var blockContent = function(){
+            return m("p","Content for Block Code goes here");
+        };
+        
+        var convolutionContent = function(){
+            return m("p","Content for Convolutional Code goes here");
+        };
+        
+        var layout = function(navigation, content) {
+            return  [
+                m("header", navigation),
+                m("section", content)
+            ];
+        };
+        
+        var mixinLayout = function(layout, navigation, content) {
+            return function() {
+                return layout(navigation(), content());
+            };
+        };
+        
+        channelCoding.view = mixinLayout(layout,navigation,introContent)
+        blockCode.view = mixinLayout(layout,navigation,blockContent);
+        convolutionCode.view = mixinLayout(layout,navigation,convolutionContent);
+        
+        m.route(document.body, "/", {
+            "/": channelCoding,
+            "/block": blockCode,
+            "/convolution": convolutionCode
+        });
+        
+    </script>
+</html>
