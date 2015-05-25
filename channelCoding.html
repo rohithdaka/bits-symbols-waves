@@ -16,30 +16,25 @@
         var blockCode = {};
         var convolutionCode = {};
         
-
+        //View for Introrduction of Channel Coding. No need for controller
         var introContent = function(){
             return m("p","Intro text goes here");
         };
+        
+        //Controller for Block Coding
+        
+        // View for Block Coding
         var blockContent = function(){
             return m("p","Content for Block Code goes here");
         };
         
+        //Controller for Convolution Coding
+        
+        //View for Convolution Coding
         var convolutionContent = function(){
             return m("p","Content for Convolutional Code goes here");
         };
-        
-        var layout = function(navigation, content) {
-            return  [
-                m("header", navigation),
-                m("section", content)
-            ];
-        };
-        
-        var mixinLayout = function(layout, navigation, content) {
-            return function() {
-                return layout(navigation(), content());
-            };
-        };
+
         
         channelCoding.view = mixinLayout(layout,navigation,introContent)
         blockCode.view = mixinLayout(layout,navigation,blockContent);
@@ -50,6 +45,5 @@
             "/block": blockCode,
             "/convolution": convolutionCode
         });
-        
     </script>
 </html>

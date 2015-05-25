@@ -17,3 +17,16 @@ var navigation = function () {
         
 }; 
 
+var layout = function(navigation, content) {
+    return  [
+        m("header", navigation),
+        m("section", content)
+    ];
+};
+
+var mixinLayout = function(layout, navigation, content) {
+    return function() {
+        return layout(navigation(), content());
+    };
+};
+
