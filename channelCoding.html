@@ -18,14 +18,26 @@
         
         //View for Introrduction of Channel Coding. No need for controller
         var introContent = function(){
-            return m("p","Intro text goes here");
+            return [
+                m("h4","Channel Coding"),
+                m("p","The world out there is teeming with noisy environment. A way to mitigate the effect of noise during transmission is to add redundant bits to the data bits. The most obvious way is to repeat the data bits twice or thrice. However, the transmission rate is severely reduced. There is usually a trade off among transmission rate, number of codewords and error correction/detection capability."),
+                m("p", "These terms will be familiar to you once you finished exploring this section of the primer. Let's get started with encoding. We have to take k bits from the data and convert (or encode) them to n bits. There are two ways this encoding can be done: "),
+                m("ol",
+                  m("li", m("a[href='/block']",{config: m.route}, "Block Coding")),
+                  m("li", m("a[href='/convolution']",{config: m.route}, "Convolution Coding"))
+                 )
+                ];
         };
         
         //Controller for Block Coding
         
         // View for Block Coding
         var blockContent = function(){
-            return m("p","Content for Block Code goes here");
+            return [
+                m("h4","Block code"),
+                m("p",""),
+                m("p","Content for Block Code goes here"),
+                ]
         };
         
         //Controller for Convolution Coding
@@ -35,7 +47,6 @@
             return m("p","Content for Convolutional Code goes here");
         };
 
-        
         channelCoding.view = mixinLayout(layout,navigation,introContent)
         blockCode.view = mixinLayout(layout,navigation,blockContent);
         convolutionCode.view = mixinLayout(layout,navigation,convolutionContent);
