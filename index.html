@@ -8,8 +8,22 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
         <script src="http://cdn.jsdelivr.net/mithril/0.2.0/mithril.min.js"></script>
+        <script src = "common.js"></script>
     </head>
+    <body></body>
     <script>
-    
+        var intro = {};
+        var introContent = function(){
+            return [
+                m("h2","Introduction"),
+                m("p","This is an attempt to provide exploratory explaination of wireless communications"),
+                m("p",""),
+                ]
+        };
+        
+        intro.view = mixinLayout(layout,navigation,introContent);
+
+        
+        m.mount(document.body, intro);
     </script>
 </html>
